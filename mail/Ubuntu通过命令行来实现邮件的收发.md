@@ -17,7 +17,7 @@ sudo apt-get install msmtp
 
 * 在～目录下新建.muttrc文件
 
-```
+```shell
 set sendmail="/usr/bin/msmtp"
 set use_from=yes
 set realname="QianyuGuo"
@@ -32,7 +32,7 @@ set send_charset="us-ascii:gbk:utf-8"
 
 * 在～目录下新建.msmtprc文件和.msmtp.log文件
 
-```
+```shell
 account default
 host smtp.sina.com
 user qygtmac (一定是邮箱@前面的部分)
