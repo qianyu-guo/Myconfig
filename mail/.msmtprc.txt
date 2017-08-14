@@ -1,0 +1,8 @@
+account default
+host smtp.sina.com
+user qygtmac
+from qygtmac@sina.com
+password *****(邮箱登录密码)
+auth login
+tls off
+logfile ~/.msmtp.log
