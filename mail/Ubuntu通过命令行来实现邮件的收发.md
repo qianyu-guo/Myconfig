@@ -40,7 +40,7 @@ set send_charset="us-ascii:gbk:utf-8"
 #vim ~/.msmtp.log
 account default
 host smtp.sina.com
-user qygtmac		#一定是邮箱@前面的部分,不能随便写)
+user qygtmac		#一定是邮箱@前面的部分,不能随便写
 from qygtmac@sina.com
 password *****		#邮箱登录密码
 auth login
