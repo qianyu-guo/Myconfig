@@ -417,11 +417,16 @@ noremap L $
 nnoremap ; :
 
 
-" 命令行模式增强，ctrl - a到行首， -e 到行尾
+" 命令行模式增强，ctrl-a到行首，ctrl-e到行尾
 cnoremap <C-j> <t_kd>
 cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
+" 自定义
+" 插入模式增强，ctrl-a到行首，ctrl-e到行尾
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+
 
 
 " 搜索相关
@@ -503,7 +508,6 @@ inoremap <C-t>     <Esc>:tabnew<CR>
 
 
 " => 选中及操作改键
-
 " 调整缩进后自动选中，方便再次操作
 vnoremap < <gv
 vnoremap > >gv
@@ -513,6 +517,8 @@ map Y y$
 
 " 复制选中区到系统剪切板中
 vnoremap <leader>y "+y
+" 从系统剪切板中粘贴到vim中
+nnoremap <leader>pp "+p
 
 " auto jump to end of select
 " vnoremap <silent> y y`]
@@ -529,12 +535,14 @@ nnoremap gv `[v`]
 nnoremap <leader>v V`}
 " 去掉快选择或者选择高亮
 nnoremap <leader>e <Esc>:noh<CR>
+vnoremap <leader>e <Esc>:noh<CR>
 
 " w!! to sudo & write a file
 cmap w!! w !sudo tee >/dev/null %
 
 " kj替换 Esc
 inoremap kj <Esc>
+vnoremap kj <Esc>
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
 
