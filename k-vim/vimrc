@@ -502,9 +502,12 @@ let g:last_active_tab = 1
 nnoremap <silent> <leader>tt :execute 'tabnext ' . g:last_active_tab<cr>
 autocmd TabLeave * let g:last_active_tab = tabpagenr()
 
-" 新建tab  Ctrl+t
-nnoremap <C-t>     :tabnew<CR>
-inoremap <C-t>     <Esc>:tabnew<CR>
+" 新建tab  由原先的Ctrl+t变成了<leader>ttt
+" nnoremap <C-t>     :tabnew<CR>
+" inoremap <C-t>     <Esc>:tabnew<CR>
+nnoremap <leader>ttt     :tabnew<CR>
+inoremap <leader>ttt    <Esc>:tabnew<CR>
+
 
 
 " => 选中及操作改键
