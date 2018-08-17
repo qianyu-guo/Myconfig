@@ -467,7 +467,24 @@ endif
     endif
 
     " 直接触发自动补全 insert模式下
-    " let g:ycm_key_invoke_completion = '<C-Space>'
+    " 参考[YouCompleteMe 中容易忽略的配置](https://zhuanlan.zhihu.com/p/33046090)
+    let g:ycm_key_invoke_completion = '<C-Z>'
+    let g:ycm_semantic_triggers =  {
+    \   'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+    \   'cs,lua,javascript': ['re!\w{2}'],
+    \ }
+
+    " 白名单
+    " 避免编辑白名单外的文件类型时,YCM也在那分析半天
+    let g:ycm_filetype_whitelist = { 
+        \ "c":1,
+        \ "cpp":1, 
+        \ "objc":1,
+        \ "sh":1,
+        \ "zsh":1,
+        \ "zimbu":1,
+        \ }
+
     " 黑名单,不启用
     let g:ycm_filetype_blacklist = {
         \ 'tagbar' : 1,
