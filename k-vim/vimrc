@@ -205,6 +205,8 @@ set smartindent
 " never add copyindent, case error   " copy the previous indentation on autoindenting
 set autoindent
 
+set cindent
+
 " tab相关变更
 " 设置Tab键的宽度        [等同的空格个数]
 set tabstop=4
@@ -522,6 +524,7 @@ map Y y$
 vnoremap <leader>y "+y
 " 从系统剪切板中粘贴到vim中
 nnoremap <leader>pp "+p
+inoremap <leader>pp <ESC>"+p
 
 " auto jump to end of select
 " vnoremap <silent> y y`]
@@ -537,8 +540,8 @@ nnoremap gv `[v`]
 " select block 快选择
 nnoremap <leader>v V`}
 " 去掉快选择或者选择高亮
-nnoremap <leader>e <Esc>:noh<CR>
-vnoremap <leader>e <Esc>:noh<CR>
+nnoremap <leader>e <Esc>:nohls<CR>
+vnoremap <leader>e <Esc>:nohls<CR>
 
 " w!! to sudo & write a file
 cmap w!! w !sudo tee >/dev/null %
