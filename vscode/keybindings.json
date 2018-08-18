@@ -44,5 +44,9 @@
         "key": "alt+1",
         "command": "workbench.action.focusActiveEditorGroup",//使用alt+1在编辑区和Terminal之间切换
         "when": "terminalFocus"
-      }
+    },
+    {
+        "key": "alt+=",
+        "command": "toggleVim"
+    }
 ]

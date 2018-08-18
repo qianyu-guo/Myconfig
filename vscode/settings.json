@@ -1,0 +1,9 @@
+{
+    "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+    "window.zoomLevel": 0,
+    "workbench.editor.enablePreview": false,
+    "workbench.iconTheme": "vscode-icons",
+
+    "fileheader.Author": "Qianyu Guo",
+    "fileheader.LastModifiedBy": "Qianyu Guo"
+}
