@@ -123,6 +123,9 @@ alias -s bz2='tar -jxf' #命令行直接输入后缀为bz2的文件名，会自�
 
 eval $(thefuck --alias)
 
+#设置终端为256色,为Zsh和Vim状态行设置Powerline做准备
+# export TERM="screen-256color"
+
 ##自定义,默认在shell中启用powerline
 if [ -f `which powerline-daemon` ]; then
     powerline-daemon -q
@@ -134,8 +137,7 @@ fi
 # export LC_ALL=en_US.UTF-8
 # export LANG=en_US.UTF-8
 
-# export AFL_PATH=/home/gqy/AFL/afl
-# export PATH=$PATH:$AFL_PATH
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
