@@ -525,8 +525,11 @@ vnoremap > >gv
 " y$ -> Y Make Y behave like other capitals
 map Y y$
 
+" 以下系统剪切板的复制粘贴需要首先执行:
+" sudo apt-get install vim-gnome
+" 以添加`"*`和`"+`两个寄存器
 " 复制选中区到系统剪切板中
-vnoremap <leader>y "+y
+vnoremap <leader>yy "+y
 " 从系统剪切板中粘贴到vim中
 nnoremap <leader>pp "+p
 inoremap <leader>pp <ESC>"+p
@@ -719,13 +722,13 @@ endif
 set background=dark
 set t_Co=256 "required
 
-colorscheme Tomorrow-Night-Bright
+" colorscheme Tomorrow-Night-Bright
 "colorscheme moonfly
 "colorscheme material
 " colorscheme Dark2
 " colorscheme blugrine_modified
 " colorscheme solarized
-" colorscheme molokai
+colorscheme molokai
 " colorscheme base16-icy
 " colorscheme tomorrow-night-bright
 
@@ -751,6 +754,7 @@ highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
 "在vim中添加并启用Powerline
-set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+"此路径可用pip show powerline-status查看
+set rtp+=/home/gqy/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set laststatus=2
 set t_Co=256

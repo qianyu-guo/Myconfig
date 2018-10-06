@@ -4,4 +4,5 @@
 * `vimrc`:k-vim的主配置文件。
 * `vimrc.bundles`:k-vim的插件配置文件，在`vimrc`中被导入。
 * `tmux.conf`:k-tmux的配置文件，在使用时注意要重命名为`.tmux.conf`。
-* `.ycm_extra_conf.py`:YouCompleteMe自动补全的配置文件，需要include哪些库里的头文件，在这里设置。
+* `ycm_extra_conf.py`:YouCompleteMe自动补全的配置文件，需要include哪些库里的头文件，在这里设置。
+   此时要把`ycm_extra_conf.py`更名为`.ycm_extra_conf.py`。
