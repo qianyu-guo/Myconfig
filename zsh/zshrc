@@ -149,7 +149,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 ## Android SDK
 export ANDROID_SDK_HOME=/usr/local/android-sdk-linux
-export PATH=$ANDROID_SDK_HOME/tools:ANDROID_SDK_HOME/platforms:$PATH
+export PATH=$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/platform-tools:$PATH
 
 ## Pyenv
 export PYENV_ROOT=$HOME/.pyenv
