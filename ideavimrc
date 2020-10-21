@@ -1,0 +1,7 @@
+" Go to home and end using capitalized directions
+nnoremap H ^
+nnoremap L $
+
+" kj represents <Esc>
+inoremap kj <Esc>
+vnoremap kj <Esc>

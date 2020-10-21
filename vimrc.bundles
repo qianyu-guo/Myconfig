@@ -25,6 +25,7 @@ endif
 " vim plugin bundle control, command model
 " ----------------------------------------------------------------------------
 
+" call plug#begin('~/.config/nvim/bundle')
 call plug#begin('~/.vim/bundle')
 
 " 移动光标到插件名上, 使用'#'快速跳转到每个插件的配置处
@@ -45,7 +46,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " 代码自动补全
 " 迄今为止用到的最好的自动VIM自动补全插件
 " 重启 :YcmRestartServer
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 " 自动补全单引号，双引号等
 Plug 'Raimondi/delimitMate'
 " 自动补全html/xml标签
@@ -126,38 +127,25 @@ Plug 'airblade/vim-gitgutter'
 " edit history, 可以查看回到某个历史状态
 Plug 'sjl/gundo.vim'
 
+
+Plug 'powerline/powerline'
 " view
 " airline
 " 状态栏增强展示
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " rainbow_parentheses
 " 括号显示增强
 Plug 'kien/rainbow_parentheses.vim'
-
 " 主题 solarized
 " solarized
 Plug 'altercation/vim-colors-solarized'
-
 " molokai
 " 主题 molokai
 Plug 'tomasr/molokai'
 
-" base16-vim
-" 主题 base16-vim
-Plug 'chriskempson/base16-vim'
 
-" tomorrow-theme
-" 主题 tomorrow-theme
-Plug 'vim-tomorrow-night'
-
-" blugrine_modified
-" 主题 blugrine_modified
-" Plug 'blugrine_modified.vim'
-
-Plug 'kaicataldo/material.vim'
-Plug 'bluz71/vim-moonfly-colors'
 " nav
 " nerdtree nerdtreetabs
 Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
@@ -324,7 +312,7 @@ if has_key(g:plugs, 'syntastic')
     " python
     " pip install flake8
     let g:syntastic_python_checkers=['flake8', ] " 使用pyflakes,速度比pylint快
-    let g:syntastic_python_flake8_args='--ignore=E501,E225,E124,E712,E116,E131'
+    let g:syntastic_python_flake8_options='--ignore=E501,E225,E124,E712,E116,E131'
 
     " javascript
     " let g:syntastic_javascript_checkers = ['jsl', 'jshint']
@@ -432,67 +420,53 @@ endif
 
 " ################### 自动补全 ###################
 
-" YouCompleteMe {{{
-    "youcompleteme  默认tab  s-tab 和自动补全冲突
-    "let g:ycm_key_list_select_completion=['<c-n>']
-    let g:ycm_key_list_select_completion = ['<Down>']
-    "let g:ycm_key_list_previous_completion=['<c-p>']
-    let g:ycm_key_list_previous_completion = ['<Up>']
-    let g:ycm_complete_in_comments = 1  "在注释输入中也能补全
-    let g:ycm_complete_in_strings = 1   "在字符串输入中也能补全
-    let g:ycm_use_ultisnips_completer = 1 "提示UltiSnips
-    let g:ycm_collect_identifiers_from_comments_and_strings = 1   "注释和字符串中的文字也会被收入补全
-    let g:ycm_collect_identifiers_from_tags_files = 1
-    " 开启语法关键字补全
-    let g:ycm_seed_identifiers_with_syntax=1
-    " 回车作为选中
-    let g:ycm_key_list_stop_completion = ['<CR>']
+" " YouCompleteMe {{{
+    " "youcompleteme  默认tab  s-tab 和自动补全冲突
+    " "let g:ycm_key_list_select_completion=['<c-n>']
+    " let g:ycm_key_list_select_completion = ['<Down>']
+    " "let g:ycm_key_list_previous_completion=['<c-p>']
+    " let g:ycm_key_list_previous_completion = ['<Up>']
+    " let g:ycm_complete_in_comments = 1  "在注释输入中也能补全
+    " let g:ycm_complete_in_strings = 1   "在字符串输入中也能补全
+    " let g:ycm_use_ultisnips_completer = 1 "提示UltiSnips
+    " let g:ycm_collect_identifiers_from_comments_and_strings = 1   "注释和字符串中的文字也会被收入补全
+    " let g:ycm_collect_identifiers_from_tags_files = 1
+    " " 开启语法关键字补全
+    " let g:ycm_seed_identifiers_with_syntax=1
+    " " 回车作为选中
+    " let g:ycm_key_list_stop_completion = ['<CR>']
 
-    "let g:ycm_seed_identifiers_with_syntax=1   "语言关键字补全, 不过python关键字都很短，所以，需要的自己打开
+    " "let g:ycm_seed_identifiers_with_syntax=1   "语言关键字补全, 不过python关键字都很短，所以，需要的自己打开
 
-    " 跳转到定义处, 分屏打开
-    let g:ycm_goto_buffer_command = 'horizontal-split'
-    let g:ycm_register_as_syntastic_checker = 0
-    " nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
-    nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-    nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
+    " " 跳转到定义处, 分屏打开
+    " let g:ycm_goto_buffer_command = 'horizontal-split'
+    " let g:ycm_register_as_syntastic_checker = 0
+    " " nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+    " nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+    " nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
 
-    " 引入，可以补全系统，以及python的第三方包 针对新老版本YCM做了兼容
-    " old version
-    if !empty(glob("~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"))
-        let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"
-    endif
-    " new version
-    if !empty(glob("~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"))
-        let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
-    endif
+    " " 引入，可以补全系统，以及python的第三方包 针对新老版本YCM做了兼容
+    " " old version
+    " if !empty(glob("~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"))
+        " let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"
+    " endif
+    " " new version
+    " if !empty(glob("~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"))
+        " let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+    " endif
+    " " new version
+    " if !empty(glob("~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py"))
+        " let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py"
+    " endif
 
-    " 直接触发自动补全 insert模式下
-    " 参考[YouCompleteMe 中容易忽略的配置](https://zhuanlan.zhihu.com/p/33046090)
-    let g:ycm_key_invoke_completion = '<C-Z>'
-    let g:ycm_semantic_triggers =  {
-    \   'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
-    \   'cs,lua,javascript': ['re!\w{2}'],
-    \ }
-
-    " 白名单
-    " 避免编辑白名单外的文件类型时,YCM也在那分析半天
-    let g:ycm_filetype_whitelist = { 
-        \ "c":1,
-        \ "cpp":1, 
-        \ "objc":1,
-        \ "python":1,
-        \ "sh":1,
-        \ "zsh":1,
-        \ "zimbu":1,
-        \ }
-
-    " 黑名单,不启用
-    let g:ycm_filetype_blacklist = {
-        \ 'tagbar' : 1,
-        \ 'gitcommit' : 1,
-        \}
-" }}}
+    " " 直接触发自动补全 insert模式下
+    " " let g:ycm_key_invoke_completion = '<C-Space>'
+    " " 黑名单,不启用
+    " let g:ycm_filetype_blacklist = {
+        " \ 'tagbar' : 1,
+        " \ 'gitcommit' : 1,
+        " \}
+" " " }}}
 
 
 " ultisnips {{{
@@ -700,22 +674,49 @@ endif
 
 " ################### 显示增强 ###################
 
-" airline {{{
-    if !exists('g:airline_symbols')
-        let g:airline_symbols = {}
-    endif
-    " let g:airline_theme = 'molokai'
-    let g:airline_theme = 'luna'
-    let g:airline_left_sep = '▶'
-    let g:airline_left_alt_sep = '❯'
-    let g:airline_right_sep = '◀'
-    let g:airline_right_alt_sep = '❮'
-    let g:airline_symbols.linenr = '¶'
-    let g:airline_symbols.branch = '⎇'
-    " 是否打开tabline
-    " let g:airline#extensions#tabline#enabled = 1
-" }}}
+" " airline {{{
+    " if !exists('g:airline_symbols')
+        " let g:airline_symbols = {}
+    " endif
+    " let g:airline_left_sep = '▶'
+    " let g:airline_left_alt_sep = '❯'
+    " let g:airline_right_sep = '◀'
+    " let g:airline_right_alt_sep = '❮'
+    " let g:airline_symbols.linenr = '¶'
+    " let g:airline_symbols.branch = '⎇'
+    " " 是否打开tabline
+    " " let g:airline#extensions#tabline#enabled = 1
+" " }}}
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Airline config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline_powerline_fonts = 0
+" let g:airline_theme = 'bubblegum'
+let g:airline_theme = 'jellybeans'
+let g:airline#extensions#whitespace#enabled = 0
+
+" to use fancy symbols for airline, uncomment the following lines and use a
+" patched font (more info on the README.rst)
+if !exists('g:airline_symbols')
+   let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#left_sep = '⮀'
+let g:airline#extensions#tabline#left_alt_sep = '⮁'
+let g:airline#extensions#tabline#right_sep = '⮂'
+let g:airline#extensions#tabline#right_alt_sep = '⮃'
+" let g:airline_theme='solarized'  " murmur配色也不错
+" let g:airline_solarized_bg='dark'
 
 
 " rainbow_parentheses {{{
@@ -774,6 +775,8 @@ endif
     " s/v 分屏打开文件
     let g:NERDTreeMapOpenSplit = 's'
     let g:NERDTreeMapOpenVSplit = 'v'
+    " fix Nerdtree ^G before folder and file names OSX terminal vim
+    let g:NERDTreeNodeDelimiter = "\u00a0"
 
 
     " nerdtreetabs

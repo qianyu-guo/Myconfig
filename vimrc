@@ -332,11 +332,6 @@ endif
 " map <Right> <Nop>
 " map <Up> <Nop>
 " map <Down> <Nop>
-"
-imap <Alt>h <Left>
-imap <Alt>l <Right>
-imap <Alt>j <Down>
-imap <Alt>k <Up>
 
 "Treat long lines as break lines (useful when moving around in them)
 "se swap之后，同物理行上线直接跳
@@ -525,11 +520,8 @@ vnoremap > >gv
 " y$ -> Y Make Y behave like other capitals
 map Y y$
 
-" 以下系统剪切板的复制粘贴需要首先执行:
-" sudo apt-get install vim-gnome
-" 以添加`"*`和`"+`两个寄存器
 " 复制选中区到系统剪切板中
-vnoremap <leader>yy "+y
+vnoremap <leader>y "+y
 " 从系统剪切板中粘贴到vim中
 nnoremap <leader>pp "+p
 inoremap <leader>pp <ESC>"+p
@@ -753,8 +745,8 @@ highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
-"在vim中添加并启用Powerline
-"此路径可用pip show powerline-status查看
-set rtp+=/home/gqy/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+" 在vim中添加并启用Powerline
+" set rtp+=/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/powerline/bindings/vim/
+set rtp+=/home/gqy/.local/lib/python3.8/site-packages/powerline/bindings/vim/
 set laststatus=2
 set t_Co=256
