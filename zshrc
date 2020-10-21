@@ -101,14 +101,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# 自定义,默认在shell中启用powerline
-if [ -f `which powerline-daemon` ]; then
-    powerline-daemon -q
-    POWERLINE_BASH_CONTINUATION=1
-    POWERLINE_BASH_SELECT=1
-    . /home/gqy/.local/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
-fi
-
 # 一些比较好用的命令别名
 alias ll='ls -alF'
 alias la='ls -A'
@@ -116,12 +108,20 @@ alias l='ls -CF'
 alias grep="grep --color=auto"
 alias cl='clear'
 
+# 自定义,默认在shell中启用powerline
+export TERM="screen-256color"
+if [ -f `which powerline-daemon` ]; then
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    . /home/gqy/.local/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
+
 # For JDK
 export JAVA_HOME=/usr/local/jdk1.8.0_261
 export JRE_HOME=${JAVA_HOME}/jre
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:$PATH
-
 # For Android SDK
 export ANDROID_SDK_HOME=/home/gqy/Android/Sdk
 export PATH=$PATH:$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/platform-tools
