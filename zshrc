@@ -107,9 +107,9 @@ alias la='ls -A'
 alias l='ls -CF'
 alias grep="grep --color=auto"
 alias cl='clear'
+alias blt='sudo service bluetooth restart'
 
 # 自定义,默认在shell中启用powerline
-export TERM="screen-256color"
 if [ -f `which powerline-daemon` ]; then
     powerline-daemon -q
     POWERLINE_BASH_CONTINUATION=1

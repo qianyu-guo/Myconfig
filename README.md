@@ -20,6 +20,7 @@
 |`zshrc`|zsh|`~/.zshrc`||
 |`font.reg`|deepin-wechat|`~/.deepinwine/Deepin-WeChat/font.reg`|微信字体乱码,参考1|
 |`config.yml`|fusuma|`~/.config/fusuma/config.yml`|Linux下Touchpad配置文件,参考2|
+|`90-magictrackpad.conf`|X11|`/usr/share/X11/xorg.conf.d/90-magictrackpad.conf`|Linux下适配苹果Magic Trackpad 2|
 
 
 # 参考
