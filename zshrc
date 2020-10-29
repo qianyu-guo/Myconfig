@@ -123,7 +123,7 @@ export JRE_HOME=${JAVA_HOME}/jre
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:$PATH
 # For Android SDK
-export ANDROID_SDK_HOME=/home/gqy/Android/Sdk
+export ANDROID_SDK_HOME=/home/gqy/Documents/Android/Sdk
 export PATH=$PATH:$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/platform-tools
 
 # For PulseSecure on Ubuntu20.04

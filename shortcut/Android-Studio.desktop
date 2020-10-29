@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Android-Studio
+GenericName=Android-Studio
+Comment=Android-Studio
+Exec="/usr/local/android-studio/bin/studio.sh" %f
+Icon=/usr/local/android-studio/bin/studio.png
+Terminal=Android-Studio
+Categories=Android-Studio;
