@@ -7,3 +7,4 @@ Exec="/usr/local/android-studio/bin/studio.sh" %f
 Icon=/usr/local/android-studio/bin/studio.png
 Terminal=Android-Studio
 Categories=Android-Studio;
+StartupWMClass=jetbrains-studio

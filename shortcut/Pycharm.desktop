@@ -7,3 +7,4 @@ Exec="/usr/local/pycharm-2020.2.3/bin/pycharm.sh" %f
 Icon=/usr/local/pycharm-2020.2.3/bin/pycharm.png
 Terminal=pycharm
 Categories=Pycharm;
+StartupWMClass=jetbrains-pycharm
